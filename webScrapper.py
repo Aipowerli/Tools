@@ -26,7 +26,7 @@ if r.status_code==200:
     for link in soup.find_all('a'):
         new_link=root_link+str(link.get('href'))#
         if new_link.endswith(".pdf"):
-            file_path=download_file(new_link,str(index),pdfname)
+            file_path=download_file(new_link,str(index))
             print("downloading:"+new_link+" -> "+file_path)
             index+=1
     print ("all download finished")
